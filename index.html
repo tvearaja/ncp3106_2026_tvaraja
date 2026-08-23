@@ -4,874 +4,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Bionote - Tracy Araja</title>
-
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-        rel="stylesheet">
-
-    <!-- SEPARATED CSS -->
-    <!-- style.css is in the same folder as index.html -->
+    <title>Tracy Araja | Night Archive</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- ============================= -->
-    <!-- AUDIO ELEMENTS -->
-    <!-- ============================= -->
-
-    <audio id="bgm" loop preload="auto">
-        <source
-            src="https://ia800504.us.archive.org/33/items/SuperMarioBros.ThemeMusic/SuperMarioBros.mp3"
-            type="audio/mpeg">
-    </audio>
-
-    <!-- Coin Sound -->
-    <audio id="sfx-coin" preload="auto">
-        <source
-            src="https://www.soundjay.com/button/button-3.mp3"
-            type="audio/mpeg">
-    </audio>
-
-    <!-- Pipe Sound -->
-    <audio id="sfx-pipe" preload="auto">
-        <source
-            src="https://www.soundjay.com/button/button-09.mp3"
-            type="audio/mpeg">
-    </audio>
-
-
-    <!-- ============================= -->
-    <!-- MUSIC CONTROL -->
-    <!-- ============================= -->
-
-    <button
-        class="music-toggle"
-        onclick="toggleMusic(event)"
-        id="musicBtn"
-        aria-label="Toggle Background Music">
-
-        <i class="fas fa-volume-up" id="musicIcon"></i>
-
-        <span id="musicText">
-            BGM ON
-        </span>
-
-    </button>
-
-
-    <!-- ============================= -->
-    <!-- MAIN POSTER -->
-    <!-- ============================= -->
-
-    <div class="poster-card">
-
-
-        <!-- ============================= -->
-        <!-- TOP METADATA BAR -->
-        <!-- ============================= -->
-
-        <div class="top-bar">
-
-            <span>
-                3RD YR COMPUTER ENGINEERING STUDENT
-            </span>
-
-            <span>
-                HARDWARE AND AI SPECIALIST
-            </span>
-
-        </div>
-
-
-        <!-- ============================= -->
-        <!-- HERO HEADER -->
-        <!-- ============================= -->
-
-        <div class="hero-header">
-
-            <div class="name-title">
-                TRACY VAN<br>ARAJA
-            </div>
-
-            <div class="bionote-tag">
-                BIONOTE
-            </div>
-
-        </div>
-
-
-        <!-- ============================= -->
-        <!-- PROFILE -->
-        <!-- ============================= -->
-
-        <div class="profile-section">
-
-
-            <!-- PROFILE IMAGE -->
-
-            <div
-                class="photo-box"
-                onclick="openLightbox(
-                    'Assets/tracy.jfif',
-                    'Tracy Van Exel A. Araja'
-                )">
-
-                <img
-                    src="Assets/tracy.jfif"
-                    alt="Tracy Araja Profile Photo">
-
-            </div>
-
-
-            <!-- INTRODUCTION -->
-
-            <div class="intro-text">
-
-                <strong>
-                    Tracy Van Exel A. Araja
-                </strong>,
-
-                also known as <em>Cy</em> or <em>Trace</em>,
-                is a 3rd-year Computer Engineering student at the
-                <strong>University of the East, Manila</strong>.
-
-                He specializes in integrating hardware and software
-                systems, as well as AI prompting expertise to create
-                innovative technology solutions.
-
-            </div>
-
-        </div>
-
-
-        <!-- ============================= -->
-        <!-- BIONOTE BODY -->
-        <!-- ============================= -->
-
-        <div class="body-text-wrapper">
-
-            <div class="body-text">
-
-                <p>
-
-                    Currently navigating his academic path as an
-                    irregular student with a full course load of
-                    10 subjects (24 total units), Tracy has demonstrated
-                    strong resilience by successfully overcoming
-                    challenges in <strong>Calculus 1</strong> and
-                    <strong>Calculus 2</strong>.
-
-                    He remains focused on executing his 3rd-year
-                    engineering design projects flawlessly to ensure
-                    a balanced and smooth schedule during his final year.
-
-                </p>
-
-
-                <p>
-
-                    Aside from academics, Tracy pursues his passion
-                    for fragrance collecting by actively participating
-                    in local "sniff sessions" community gatherings
-                    dedicated to exploring and sharing unique scents.
-
-                    He also prioritizes his physical health and
-                    well-being through regular workouts at the gym
-                    during his free time.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- ============================= -->
-        <!-- CREDENTIALS -->
-        <!-- ============================= -->
-
-        <div
-            class="credentials-card"
-            onclick="openModal()">
-
-            <div class="card-title">
-                CREDENTIALS &amp; SKILLS
-            </div>
-
-            <p class="credentials-info">
-
-                • BS Computer Engineering — UE Manila<br>
-                • Hardware &amp; Software Systems Integration<br>
-                • AI Prompt Engineering Specialist
-
-            </p>
-
-            <div class="click-hint">
-
-                <i class="fas fa-hand-pointer"></i>
-
-                ENTER WARP PIPE FOR ACHIEVEMENTS ►
-
-            </div>
-
-        </div>
-
-
-        <!-- ============================= -->
-        <!-- SOCIAL LINKS -->
-        <!-- ============================= -->
-
-        <div class="socials">
-
-
-            <!-- FACEBOOK -->
-
-            <div class="social-btn-wrapper">
-
-                <a
-                    href="https://www.facebook.com/noctis.lucis.718689"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onclick="spawnMarioCoin(event, this)"
-                    aria-label="Facebook Profile">
-
-                    <i class="fab fa-facebook-f"></i>
-
-                </a>
-
-            </div>
-
-
-            <!-- INSTAGRAM -->
-
-            <div class="social-btn-wrapper">
-
-                <a
-                    href="https://www.instagram.com/tra.v.araja"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onclick="spawnMarioCoin(event, this)"
-                    aria-label="Instagram Profile">
-
-                    <i class="fab fa-instagram"></i>
-
-                </a>
-
-            </div>
-
-
-            <!-- TIKTOK -->
-
-            <div class="social-btn-wrapper">
-
-                <a
-                    href="https://www.tiktok.com/@dgburnik"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onclick="spawnMarioCoin(event, this)"
-                    aria-label="TikTok Profile">
-
-                    <i class="fab fa-tiktok"></i>
-
-                </a>
-
-            </div>
-
-        </div>
-
+    <!-- PERMANENT NIGHT SKY -->
+    <div class="sky">
+        <!-- STARS (100 SPOTS) -->
+        <span class="star s1"></span>
+        <span class="star s2"></span>
+        <span class="star s3"></span>
+        <span class="star s4"></span>
+        <span class="star s5"></span>
+        <span class="star s6"></span>
+        <span class="star s7"></span>
+        <span class="star s8"></span>
+        <span class="star s9"></span>
+        <span class="star s10"></span>
+        <span class="star s11"></span>
+        <span class="star s12"></span>
+        <span class="star s13"></span>
+        <span class="star s14"></span>
+        <span class="star s15"></span>
+        <span class="star s16"></span>
+        <span class="star s17"></span>
+        <span class="star s18"></span>
+        <span class="star s19"></span>
+        <span class="star s20"></span>
+        <span class="star s21"></span>
+        <span class="star s22"></span>
+        <span class="star s23"></span>
+        <span class="star s24"></span>
+        <span class="star s25"></span>
+        <span class="star s26"></span>
+        <span class="star s27"></span>
+        <span class="star s28"></span>
+        <span class="star s29"></span>
+        <span class="star s30"></span>
+        <span class="star s31"></span>
+        <span class="star s32"></span>
+        <span class="star s33"></span>
+        <span class="star s34"></span>
+        <span class="star s35"></span>
+        <span class="star s36"></span>
+        <span class="star s37"></span>
+        <span class="star s38"></span>
+        <span class="star s39"></span>
+        <span class="star s40"></span>
+        <span class="star s41"></span>
+        <span class="star s42"></span>
+        <span class="star s43"></span>
+        <span class="star s44"></span>
+        <span class="star s45"></span>
+        <span class="star s46"></span>
+        <span class="star s47"></span>
+        <span class="star s48"></span>
+        <span class="star s49"></span>
+        <span class="star s50"></span>
+        <span class="star s51"></span>
+        <span class="star s52"></span>
+        <span class="star s53"></span>
+        <span class="star s54"></span>
+        <span class="star s55"></span>
+        <span class="star s56"></span>
+        <span class="star s57"></span>
+        <span class="star s58"></span>
+        <span class="star s59"></span>
+        <span class="star s60"></span>
+        <span class="star s61"></span>
+        <span class="star s62"></span>
+        <span class="star s63"></span>
+        <span class="star s64"></span>
+        <span class="star s65"></span>
+        <span class="star s66"></span>
+        <span class="star s67"></span>
+        <span class="star s68"></span>
+        <span class="star s69"></span>
+        <span class="star s70"></span>
+        <span class="star s71"></span>
+        <span class="star s72"></span>
+        <span class="star s73"></span>
+        <span class="star s74"></span>
+        <span class="star s75"></span>
+        <span class="star s76"></span>
+        <span class="star s77"></span>
+        <span class="star s78"></span>
+        <span class="star s79"></span>
+        <span class="star s80"></span>
+        <span class="star s81"></span>
+        <span class="star s82"></span>
+        <span class="star s83"></span>
+        <span class="star s84"></span>
+        <span class="star s85"></span>
+        <span class="star s86"></span>
+        <span class="star s87"></span>
+        <span class="star s88"></span>
+        <span class="star s89"></span>
+        <span class="star s90"></span>
+        <span class="star s91"></span>
+        <span class="star s92"></span>
+        <span class="star s93"></span>
+        <span class="star s94"></span>
+        <span class="star s95"></span>
+        <span class="star s96"></span>
+        <span class="star s97"></span>
+        <span class="star s98"></span>
+        <span class="star s99"></span>
+        <span class="star s100"></span>
+
+        <!-- EXPANDED METEORS (20 METEORS MOVING LEFT TO RIGHT) -->
+        <span class="meteor m1"></span>
+        <span class="meteor m2"></span>
+        <span class="meteor m3"></span>
+        <span class="meteor m4"></span>
+        <span class="meteor m5"></span>
+        <span class="meteor m6"></span>
+        <span class="meteor m7"></span>
+        <span class="meteor m8"></span>
+        <span class="meteor m9"></span>
+        <span class="meteor m10"></span>
+        <span class="meteor m11"></span>
+        <span class="meteor m12"></span>
+        <span class="meteor m13"></span>
+        <span class="meteor m14"></span>
+        <span class="meteor m15"></span>
+        <span class="meteor m16"></span>
+        <span class="meteor m17"></span>
+        <span class="meteor m18"></span>
+        <span class="meteor m19"></span>
+        <span class="meteor m20"></span>
+
+        <div class="moon"></div>
     </div>
 
+    <!-- NAVIGATION -->
+    <header class="nav">
+        <div class="logo">TA<span>.</span></div>
+        <div class="nav-title">NIGHT ARCHIVE / 2026</div>
+        <div class="nav-coordinates">14°35′N / 120°59′E</div>
+    </header>
 
-    <!-- ============================= -->
-    <!-- ACHIEVEMENT MODAL -->
-    <!-- ============================= -->
+    <!-- PART I — PERSON -->
+    <section class="section person" id="person">
+        <div class="section-number">01</div>
+        <div class="section-label">THE PERSON</div>
 
-    <div
-        class="modal-overlay"
-        id="achievementModal">
-
-        <div class="modal-content">
-
-
-            <!-- CLOSE BUTTON -->
-
-            <button
-                class="close-btn"
-                onclick="closeModal()">
-
-                ◄ BACK TO BIONOTE
-
-            </button>
-
-
-            <!-- MODAL TITLE -->
-
-            <div
-                class="card-title"
-                style="
-                    font-size:14px !important;
-                    color:#f8d000 !important;
-                ">
-
-                ACADEMIC &amp; TECHNICAL HIGHLIGHTS
-
+        <div class="person-content">
+            <div class="person-copy">
+                <span class="eyebrow">COMPUTER ENGINEERING / MANILA</span>
+                <h1>TRACY<br><span>ARAJA</span></h1>
+                <p>A Computer Engineering student interested in hardware, software, and building things that actually work.</p>
+                <div class="archive-mark">
+                    <span>ARCHIVE ENTRY</span>
+                    <strong>TA / 001</strong>
+                </div>
             </div>
 
-
-            <!-- ACHIEVEMENT 1 -->
-
-            <p class="modal-paragraph">
-
-                Throughout his academic journey in Computer Engineering,
-                Tracy has consistently demonstrated excellence and
-                innovative design capabilities through high-profile
-                projects which pave way for his greatness.
-
-                Alongside his partner, <strong>Mei Rupera</strong>,
-                Tracy earned a prestigious top spot in their
-                <strong>Object-Oriented Programming (OOP)</strong>
-                coursework by developing their
-                <strong>academic sign language app</strong>.
-
-            </p>
-
-
-            <!-- ACHIEVEMENT 2 -->
-
-            <p class="modal-paragraph">
-
-                Building on this momentum in hardware design,
-                their team also developed an
-                <strong>F1-inspired Fire Truck</strong>
-                for their Microprocessor class—a groundbreaking build
-                widely recognized as the top project for microprocessors.
-
-                Beyond these standout achievements, Tracy maintains
-                strong academic resilience while continually honing
-                his skills in AI prompt engineering and hands-on
-                systems integration.
-
-            </p>
-
-
-            <!-- GALLERY TITLE -->
-
-            <div
-                class="card-title"
-                style="
-                    font-size:14px !important;
-                    margin-top:10px;
-                    color:#f8d000 !important;
-                ">
-
-                GALLERY &amp; ACHIEVEMENTS
-
+            <div class="museum-display">
+                <div class="portrait-frame">
+                    <img src="Assets/tracy.png" alt="Tracy Van Exel A. Araja">
+                </div>
             </div>
+        </div>
+    </section>
 
+    <!-- PART II — WORK (ORBIT SYSTEM) -->
+    <section class="section work" id="work">
+        <div class="section-number">02</div>
+        <div class="section-label">THE WORK</div>
 
-            <!-- ============================= -->
-            <!-- GALLERY -->
-            <!-- ============================= -->
-
-            <div class="gallery-grid">
-
-
-                <!-- PROJECT 1 -->
-
-                <div
-                    class="gallery-item"
-                    onclick="openLightbox(
-                        'Assets/proj.jfif',
-                        'Microprocessor Midterm Project — Advance Money-Vault System'
-                    )">
-
-                    <img
-                        src="Assets/proj.jfif"
-                        alt="Microprocessor Project">
-
-                    <div class="gallery-caption">
-
-                        <strong>
-                            Microprocessor Midterm Project
-                        </strong>
-
-                        <br>
-
-                        Advance Money-Vault System.
-
-                    </div>
-
-                </div>
-
-
-                <!-- FRAGRANCE -->
-
-                <div
-                    class="gallery-item"
-                    onclick="openLightbox(
-                        'Assets/pabango.jfif',
-                        'Fragrance Showcase — Rasasi Hawas'
-                    )">
-
-                    <img
-                        src="Assets/pabango.jfif"
-                        alt="Fragrance Showcase">
-
-                    <div class="gallery-caption">
-
-                        <strong>
-                            Fragrance Showcase
-                        </strong>
-
-                        <br>
-
-                        Rasasi Hawas featured at Sniff Session.
-
-                    </div>
-
-                </div>
-
-
-                <!-- OOP PROJECT -->
-
-                <div
-                    class="gallery-item"
-                    onclick="openLightbox(
-                        'Assets/oop.jpg',
-                        'Software & OOP Projects — Academic Sign Language'
-                    )">
-
-                    <img
-                        src="Assets/oop.jpg"
-                        alt="OOP Projects">
-
-                    <div class="gallery-caption">
-
-                        <strong>
-                            Software &amp; OOP Projects
-                        </strong>
-
-                        <br>
-
-                        Top-ranked application developed with
-                        Mei Rupera.
-
-                    </div>
-
-                </div>
-
-
-                <!-- F1 FIRE TRUCK -->
-
-                <div
-                    class="gallery-item"
-                    onclick="openLightbox(
-                        'Assets/f1.jpg',
-                        'Microprocessor Final Project — Formula 1 Fire Truck'
-                    )">
-
-                    <img
-                        src="Assets/f1.jpg"
-                        alt="Formula 1 Engineering">
-
-                    <div class="gallery-caption">
-
-                        <strong>
-                            Formula 1 Fire Truck
-                        </strong>
-
-                        <br>
-
-                        F1-inspired Microprocessor Fire Truck.
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
+        <div class="work-intro">
+            <span>FIELD NOTES / SELECTED WORK</span>
+            <h2>THINGS <em>BUILT.</em></h2>
+            <p>Engineering experiments, embedded systems, robotics, and software projects.</p>
         </div>
 
-    </div>
+        <!-- Rotating Wheel Track -->
+        <div class="orbit-container">
+            <div class="museum-wall">
 
+                <!-- CONSTELLATION OVERLAY -->
+                <svg class="constellation-overlay" viewBox="0 0 1000 700" preserveAspectRatio="none">
+                    <line x1="300" y1="120" x2="550" y2="200" class="constellation-line" />
+                    <circle cx="550" cy="200" r="3.5" class="constellation-node" />
+                    <text x="560" y="204" class="constellation-coord">NODE 01 // LAT 14.599</text>
 
-    <!-- ============================= -->
-    <!-- LIGHTBOX -->
-    <!-- ============================= -->
+                    <line x1="550" y1="200" x2="700" y2="300" class="constellation-line" />
 
-    <div
-        class="lightbox-overlay"
-        id="lightboxOverlay"
-        onclick="closeLightbox(event)">
+                    <line x1="700" y1="420" x2="480" y2="500" class="constellation-line" />
+                    <circle cx="480" cy="500" r="3.5" class="constellation-node" />
+                    <text x="370" y="515" class="constellation-coord">NODE 02 // LON 120.984</text>
 
-        <div
-            class="lightbox-container"
-            onclick="event.stopPropagation()">
+                    <line x1="480" y1="500" x2="350" y2="560" class="constellation-line" />
+                </svg>
 
+                <!-- PROJECT 01 -->
+                <article class="art-piece piece-one">
+                    <div class="art-content">
+                        <div class="art-number">01</div>
+                        <div class="art-frame">
+                            <img src="Assets/proj.png" alt="Advanced Money Vault">
+                        </div>
+                        <div class="art-plaque">
+                            <span>MICROPROCESSOR / SECURITY</span>
+                            <h3>ADVANCED<br>MONEY-VAULT</h3>
+                            <p>Multi-layered embedded security using sensors and hardware verification.</p>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- CLOSE -->
+                <!-- PROJECT 02 -->
+                <article class="art-piece piece-two">
+                    <div class="art-content">
+                        <div class="art-number">02</div>
+                        <div class="art-frame">
+                            <img src="Assets/f1.png" alt="Formula 1 Fire Truck">
+                        </div>
+                        <div class="art-plaque">
+                            <span>ROBOTICS / MICROPROCESSOR</span>
+                            <h3>FORMULA 1<br>FIRE TRUCK</h3>
+                            <p>Arduino firefighting robot combining flame detection, wireless control, and an F1-inspired chassis.</p>
+                        </div>
+                    </div>
+                </article>
 
-            <button
-                class="lightbox-close"
-                onclick="closeLightbox(event)"
-                aria-label="Close Lightbox">
-
-                ✕
-
-            </button>
-
-
-            <!-- IMAGE -->
-
-            <img
-                src=""
-                alt="Full size preview"
-                id="lightboxImg"
-                class="lightbox-img">
-
-
-            <!-- CAPTION -->
-
-            <div
-                id="lightboxCaption"
-                class="lightbox-caption">
+                <!-- PROJECT 03 -->
+                <article class="art-piece piece-three">
+                    <div class="art-content">
+                        <div class="art-number">03</div>
+                        <div class="art-frame">
+                            <img src="Assets/oop.jpg" alt="Academic Sign Language Project">
+                        </div>
+                        <div class="art-plaque">
+                            <span>SOFTWARE / OOP</span>
+                            <h3>ACADEMIC<br>SIGN LANGUAGE</h3>
+                            <p>An object-oriented programming project developed as an academic software application.</p>
+                        </div>
+                    </div>
+                </article>
 
             </div>
+        </div>
+    </section>
 
+    <!-- PART III — ARCHIVE -->
+    <section class="section archive" id="archive">
+        <div class="section-number">03</div>
+        <div class="section-label">THE ARCHIVE</div>
+
+        <div class="archive-content">
+            <div class="archive-heading">
+                <span>BIONOTE / ARCHIVE ENTRY</span>
+                <h2>BEYOND<br><em>THE PROJECTS.</em></h2>
+            </div>
+            <div class="archive-description">
+                <p>Tracy Van Exel A. Araja is a Computer Engineering student at the University of the East, Manila.</p>
+            </div>
         </div>
 
-    </div>
+        <div class="achievement-fold">
+            <div class="achievement-inner">
+                <div class="achievement-heading">
+                    <h3>ACHIEVEMENTS</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- FOOTER -->
+    <footer>
+        <div>TA.</div>
+        <p>NIGHT ARCHIVE / 2026</p>
+    </footer>
 
-    <!-- ============================= -->
     <!-- JAVASCRIPT -->
-    <!-- ============================= -->
-
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const artPieces = document.querySelectorAll(".art-piece");
+        const achievementFold = document.querySelector(".achievement-fold");
 
-        /* ============================= */
-        /* AUDIO */
-        /* ============================= */
+        artPieces.forEach((piece) => {
+          piece.addEventListener("click", () => {
+            const isAlreadySelected = piece.classList.contains("selected-piece");
 
-        const bgm =
-            document.getElementById('bgm');
-
-        const sfxCoin =
-            document.getElementById('sfx-coin');
-
-        const sfxPipe =
-            document.getElementById('sfx-pipe');
-
-
-        let isMuted = false;
-
-        let musicStarted = false;
-
-
-        bgm.volume = 0.3;
-
-
-        /* ============================= */
-        /* START MUSIC AFTER USER CLICK */
-        /* ============================= */
-
-        document.addEventListener(
-            'click',
-            function startAudioOnInteraction() {
-
-                if (!musicStarted && !isMuted) {
-
-                    bgm.play()
-                        .then(() => {
-
-                            musicStarted = true;
-
-                        })
-                        .catch(e => {
-
-                            console.log(
-                                "Audio playback waiting for user click interaction."
-                            );
-
-                        });
-
+            if (isAlreadySelected) {
+              artPieces.forEach((p) => {
+                p.classList.remove("selected-piece");
+                if (p.classList.contains("swept-away")) {
+                  p.classList.remove("swept-away");
+                  p.classList.add("reverse-swept");
+                  
+                  setTimeout(() => {
+                    p.classList.remove("reverse-swept");
+                  }, 1400);
                 }
+              });
 
-            },
-            {
-                once: true
-            }
-        );
-
-
-        /* ============================= */
-        /* MUSIC TOGGLE */
-        /* ============================= */
-
-        function toggleMusic(e) {
-
-            e.stopPropagation();
-
-
-            const icon =
-                document.getElementById('musicIcon');
-
-            const text =
-                document.getElementById('musicText');
-
-
-            if (bgm.paused) {
-
-                bgm.play()
-                    .catch(e => {
-
-                        console.log(
-                            "Play failed:",
-                            e
-                        );
-
-                    });
-
-
-                isMuted = false;
-
-
-                icon.className =
-                    'fas fa-volume-up';
-
-
-                text.innerText =
-                    'BGM ON';
-
-
+              if (achievementFold) {
+                achievementFold.classList.remove("focused-achievements");
+              }
             } else {
-
-                bgm.pause();
-
-
-                isMuted = true;
-
-
-                icon.className =
-                    'fas fa-volume-mute';
-
-
-                text.innerText =
-                    'BGM OFF';
-
-            }
-
-        }
-
-
-        /* ============================= */
-        /* SOUND EFFECT */
-        /* ============================= */
-
-        function playSFX(audioElement) {
-
-            if (audioElement) {
-
-                audioElement.currentTime = 0;
-
-                audioElement.play()
-                    .catch(e => {});
-
-            }
-
-        }
-
-
-        /* ============================= */
-        /* OPEN MODAL */
-        /* ============================= */
-
-        function openModal() {
-
-            playSFX(sfxPipe);
-
-
-            document.getElementById(
-                'achievementModal'
-            ).style.display = 'flex';
-
-        }
-
-
-        /* ============================= */
-        /* CLOSE MODAL */
-        /* ============================= */
-
-        function closeModal() {
-
-            playSFX(sfxPipe);
-
-
-            document.getElementById(
-                'achievementModal'
-            ).style.display = 'none';
-
-        }
-
-
-        /* ============================= */
-        /* OPEN IMAGE LIGHTBOX */
-        /* ============================= */
-
-        function openLightbox(
-            src,
-            captionText
-        ) {
-
-            playSFX(sfxCoin);
-
-
-            const overlay =
-                document.getElementById(
-                    'lightboxOverlay'
-                );
-
-
-            const img =
-                document.getElementById(
-                    'lightboxImg'
-                );
-
-
-            const caption =
-                document.getElementById(
-                    'lightboxCaption'
-                );
-
-
-            img.src = src;
-
-            caption.innerText =
-                captionText;
-
-
-            overlay.style.display =
-                'flex';
-
-        }
-
-
-        /* ============================= */
-        /* CLOSE LIGHTBOX */
-        /* ============================= */
-
-        function closeLightbox(event) {
-
-            if (event) {
-
-                event.stopPropagation();
-
-            }
-
-
-            playSFX(sfxPipe);
-
-
-            document.getElementById(
-                'lightboxOverlay'
-            ).style.display = 'none';
-
-        }
-
-
-        /* ============================= */
-        /* MARIO COIN EFFECT */
-        /* ============================= */
-
-        function spawnMarioCoin(
-            event,
-            element
-        ) {
-
-            playSFX(sfxCoin);
-
-
-            element.classList.add(
-                'hit-block'
-            );
-
-
-            setTimeout(() => {
-
-                element.classList.remove(
-                    'hit-block'
-                );
-
-            }, 200);
-
-
-            const wrapper =
-                element.parentElement;
-
-
-            const coin =
-                document.createElement(
-                    'div'
-                );
-
-
-            coin.className =
-                'mario-coin';
-
-
-            coin.innerHTML =
-                '<i class="fas fa-coins"></i>';
-
-
-            wrapper.appendChild(
-                coin
-            );
-
-
-            setTimeout(() => {
-
-                coin.remove();
-
-            }, 3000);
-
-        }
-
-
-        /* ============================= */
-        /* ESCAPE KEY */
-        /* ============================= */
-
-        document.addEventListener(
-            'keydown',
-            function(e) {
-
-                if (e.key === 'Escape') {
-
-                    closeModal();
-
-                    closeLightbox();
-
+              artPieces.forEach((p) => {
+                p.classList.remove("selected-piece", "reverse-swept");
+              });
+
+              piece.classList.add("selected-piece");
+
+              artPieces.forEach((p) => {
+                if (p !== piece) {
+                  p.classList.add("swept-away");
                 }
+              });
 
+              if (achievementFold) {
+                achievementFold.classList.add("focused-achievements");
+              }
             }
-        );
-
+          });
+        });
+      });
     </script>
-
 </body>
-
 </html>
