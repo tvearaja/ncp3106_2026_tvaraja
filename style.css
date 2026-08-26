@@ -1006,7 +1006,6 @@ footer p {
             box-shadow: 0 0 8px #d4af37, 0 0 12px #ffffff;
         }
 
-        /* Unique Staggered Positions */
         .node-alpha {
             grid-column: 1 / span 8;
             margin-left: 1rem;
