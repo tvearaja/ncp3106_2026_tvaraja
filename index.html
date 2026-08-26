@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tracy Araja | Night Archive</title>
+    <title>Tracy Araja | Starry Night</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +14,8 @@
 
 <body>
 
-    <!-- PERMANENT NIGHT SKY -->
     <div class="sky">
-        <!-- STARS (100 SPOTS) -->
+        
         <span class="star s1"></span>
         <span class="star s2"></span>
         <span class="star s3"></span>
@@ -118,7 +117,6 @@
         <span class="star s99"></span>
         <span class="star s100"></span>
 
-        <!-- EXPANDED METEORS (20 METEORS MOVING LEFT TO RIGHT) -->
         <span class="meteor m1"></span>
         <span class="meteor m2"></span>
         <span class="meteor m3"></span>
@@ -143,18 +141,13 @@
         <div class="moon"></div>
     </div>
 
-    <!-- NAVIGATION -->
     <header class="nav">
         <div class="logo">TA<span>.</span></div>
-        <div class="nav-title">NIGHT ARCHIVE / 2026</div>
+        <div class="nav-title">STARRY NIGHT / 2026</div>
         <div class="nav-coordinates">14°35′N / 120°59′E</div>
     </header>
 
-    <!-- PART I — PERSON -->
     <section class="section person" id="person">
-        <div class="section-number">01</div>
-        <div class="section-label">THE PERSON</div>
-
         <div class="person-content">
             <div class="person-copy">
                 <span class="eyebrow">COMPUTER ENGINEERING / MANILA</span>
@@ -174,37 +167,121 @@
         </div>
     </section>
 
-    <!-- PART II — WORK (ORBIT SYSTEM) -->
-    <section class="section work" id="work">
-        <div class="section-number">02</div>
-        <div class="section-label">THE WORK</div>
+    <section class="section archive" id="archive">
+        <div class="archive-content">
+            <div class="archive-heading">
+                <span>BIONOTE / ARCHIVE ENTRY</span>
+                <h2>KNOW<br><em>THE STAR.</em></h2>
+            </div>
+            
+            <div class="constellation-archive">
+                <svg class="bio-svg-network" viewBox="0 0 1000 800" preserveAspectRatio="none" style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index: 1;">
+                    <defs>
+                        <filter id="gold-glow-thin" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="1.5" result="blur1" />
+                            <feGaussianBlur stdDeviation="4" result="blur2" />
+                            <feMerge>
+                                <feMergeNode in="blur2" />
+                                <feMergeNode in="blur1" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
 
+                    <polyline points="400,120  320,240  480,360  450,440" 
+                              stroke="#ffe89c" 
+                              stroke-width="1.2" 
+                              stroke-dasharray="5,4" 
+                              fill="none" 
+                              filter="url(#gold-glow-thin)" />
+
+                    <circle cx="320" cy="240" r="3.5" fill="#ffffff" stroke="#ffca36" stroke-width="1.5" filter="url(#gold-glow-thin)" />
+                    <circle cx="480" cy="360" r="3.5" fill="#ffffff" stroke="#ffca36" stroke-width="1.5" filter="url(#gold-glow-thin)" />
+
+                    <polyline points="650,480  760,560  620,640  580,720" 
+                              stroke="#ffe89c" 
+                              stroke-width="1.2" 
+                              stroke-dasharray="5,4" 
+                              fill="none" 
+                              filter="url(#gold-glow-thin)" />
+
+                    <circle cx="760" cy="560" r="3.5" fill="#ffffff" stroke="#ffca36" stroke-width="1.5" filter="url(#gold-glow-thin)" />
+                    <circle cx="620" cy="640" r="3.5" fill="#ffffff" stroke="#ffca36" stroke-width="1.5" filter="url(#gold-glow-thin)" />
+                </svg>
+
+                <div class="bio-nodes-container" style="position: relative; z-index: 2;">
+                    <div class="bio-node node-alpha">
+                        <span class="node-tag">NODE A // 14°35′N</span>
+                        <p>
+                            <strong>Tracy Van Exel A. Araja</strong> (known as <em>Cy</em> or <em>Trace</em>) is a 3rd-year Computer Engineering student at the <strong>University of the East, Manila</strong>, specializing in hardware-software integration and AI prompting.
+                        </p>
+                    </div>
+
+                    <div class="bio-node node-beta">
+                        <span class="node-tag">NODE B // 120°59′E</span>
+                        <p>
+                            Currently tackling a full 24-unit course load across 10 subjects, Tracy has navigated academic hurdles in Calculus and Physics while keeping a clear focus on executing his 3rd-year engineering design projects.
+                        </p>
+                    </div>
+
+                    <div class="bio-node node-gamma">
+                        <span class="node-tag">NODE C // ORBIT 03</span>
+                        <p>
+                            Beyond technical work, he engages with local fragrance communities through curated "sniff sessions" and stays dedicated to physical fitness through regular workouts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section work" id="work">
         <div class="work-intro">
-            <span>FIELD NOTES / SELECTED WORK</span>
-            <h2>THINGS <em>BUILT.</em></h2>
-            <p>Engineering experiments, embedded systems, robotics, and software projects.</p>
+            <span>FIELD NOTES / SELECTED WORK & INTERESTS</span>
+            <h2>THINGS <em>BUILT & LIKED.</em></h2>
+            <p>Engineering experiments, embedded systems, robotics, software projects, and personal archives.</p>
         </div>
 
-        <!-- Rotating Wheel Track -->
         <div class="orbit-container">
             <div class="museum-wall">
 
-                <!-- CONSTELLATION OVERLAY -->
-                <svg class="constellation-overlay" viewBox="0 0 1000 700" preserveAspectRatio="none">
-                    <line x1="300" y1="120" x2="550" y2="200" class="constellation-line" />
-                    <circle cx="550" cy="200" r="3.5" class="constellation-node" />
-                    <text x="560" y="204" class="constellation-coord">NODE 01 // LAT 14.599</text>
+                <svg class="constellation-overlay" viewBox="0 0 1000 1800" preserveAspectRatio="none">
+                    <defs>
+                        <filter id="work-gold-glow-thin" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="1.5" result="blur1" />
+                            <feGaussianBlur stdDeviation="3.5" result="blur2" />
+                            <feMerge>
+                                <feMergeNode in="blur2" />
+                                <feMergeNode in="blur1" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
 
-                    <line x1="550" y1="200" x2="700" y2="300" class="constellation-line" />
+                    <polyline points="280,180 420,130 520,200" 
+                              stroke="#ffe89c" stroke-width="1" stroke-dasharray="5,4" fill="none" filter="url(#work-gold-glow-thin)" />
+                    
+                    <circle cx="520" cy="200" r="4" fill="#ffffff" stroke="#ffca36" stroke-width="1.5" filter="url(#work-gold-glow-thin)" />
+                    <text x="535" y="205" fill="#ffe89c" font-family="'DM Mono', monospace" font-size="12" letter-spacing="1">NODE 01 // LAT 14.599</text>
 
-                    <line x1="700" y1="420" x2="480" y2="500" class="constellation-line" />
-                    <circle cx="480" cy="500" r="3.5" class="constellation-node" />
-                    <text x="370" y="515" class="constellation-coord">NODE 02 // LON 120.984</text>
+                    <polyline points="520,200 640,320 580,450 700,520" 
+                              stroke="#ffe89c" stroke-width="1" stroke-dasharray="5,4" fill="none" filter="url(#work-gold-glow-thin)" />
+                    
+                    <circle cx="640" cy="320" r="3" fill="#ffffff" stroke="#ffca36" stroke-width="1" filter="url(#work-gold-glow-thin)" />
 
-                    <line x1="480" y1="500" x2="350" y2="560" class="constellation-line" />
+                    <polyline points="700,750 620,840 480,950" 
+                              stroke="#ffe89c" stroke-width="1" stroke-dasharray="5,4" fill="none" filter="url(#work-gold-glow-thin)" />
+
+                    <circle cx="480" cy="950" r="4" fill="#ffffff" stroke="#ffca36" stroke-width="1.5" filter="url(#work-gold-glow-thin)" />
+                    <text x="310" y="955" fill="#ffe89c" font-family="'DM Mono', monospace" font-size="12" letter-spacing="1">NODE 02 // LON 120.984</text>
+
+                    <polyline points="480,950 360,1100 280,1250 450,1400 720,1550" 
+                              stroke="#ffe89c" stroke-width="1" stroke-dasharray="5,4" fill="none" filter="url(#work-gold-glow-thin)" />
+                    
+                    <circle cx="360" cy="1100" r="3" fill="#ffffff" stroke="#ffca36" stroke-width="1" filter="url(#work-gold-glow-thin)" />
+                    <circle cx="450" cy="1400" r="3.5" fill="#ffffff" stroke="#ffca36" stroke-width="1.5" filter="url(#work-gold-glow-thin)" />
                 </svg>
 
-                <!-- PROJECT 01 -->
                 <article class="art-piece piece-one">
                     <div class="art-content">
                         <div class="art-number">01</div>
@@ -219,7 +296,6 @@
                     </div>
                 </article>
 
-                <!-- PROJECT 02 -->
                 <article class="art-piece piece-two">
                     <div class="art-content">
                         <div class="art-number">02</div>
@@ -234,7 +310,6 @@
                     </div>
                 </article>
 
-                <!-- PROJECT 03 -->
                 <article class="art-piece piece-three">
                     <div class="art-content">
                         <div class="art-number">03</div>
@@ -249,45 +324,32 @@
                     </div>
                 </article>
 
+                <article class="art-piece piece-four">
+                    <div class="art-content">
+                        <div class="art-number">04</div>
+                        <div class="art-frame">
+                            <img src="Assets/pabango.png" alt="Fragrance Collection">
+                        </div>
+                        <div class="art-plaque">
+                            <span>CURATION / INTERESTS</span>
+                            <h3>FRAGRANCE<br>COLLECTION</h3>
+                            <p>Scent explorations, scent notes, and active participation in local fragrance communities.</p>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <!-- PART III — ARCHIVE -->
-    <section class="section archive" id="archive">
-        <div class="section-number">03</div>
-        <div class="section-label">THE ARCHIVE</div>
-
-        <div class="archive-content">
-            <div class="archive-heading">
-                <span>BIONOTE / ARCHIVE ENTRY</span>
-                <h2>BEYOND<br><em>THE PROJECTS.</em></h2>
-            </div>
-            <div class="archive-description">
-                <p>Tracy Van Exel A. Araja is a Computer Engineering student at the University of the East, Manila.</p>
-            </div>
-        </div>
-
-        <div class="achievement-fold">
-            <div class="achievement-inner">
-                <div class="achievement-heading">
-                    <h3>ACHIEVEMENTS</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
     <footer>
         <div>TA.</div>
-        <p>NIGHT ARCHIVE / 2026</p>
+        <p>STARRY NIGHT / 2026</p>
     </footer>
 
-    <!-- JAVASCRIPT -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const artPieces = document.querySelectorAll(".art-piece");
-        const achievementFold = document.querySelector(".achievement-fold");
 
         artPieces.forEach((piece) => {
           piece.addEventListener("click", () => {
@@ -305,10 +367,6 @@
                   }, 1400);
                 }
               });
-
-              if (achievementFold) {
-                achievementFold.classList.remove("focused-achievements");
-              }
             } else {
               artPieces.forEach((p) => {
                 p.classList.remove("selected-piece", "reverse-swept");
@@ -321,10 +379,6 @@
                   p.classList.add("swept-away");
                 }
               });
-
-              if (achievementFold) {
-                achievementFold.classList.add("focused-achievements");
-              }
             }
           });
         });
