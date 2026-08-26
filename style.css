@@ -996,7 +996,6 @@ footer p {
             transform: translateY(-3px);
         }
 
-        /* Node Star Point Indicators */
         .bio-node::before {
             content: '';
             position: absolute;
