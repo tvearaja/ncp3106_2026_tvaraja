@@ -476,9 +476,15 @@ h4 {
 .archive-mark {
     margin-top: 50px;
     display: flex;
+    align-items: center;
     gap: 25px;
     font-size: 10px;
     letter-spacing: 2px;
+}
+
+.archive-label {
+    display: flex;
+    gap: 10px;
 }
 
 .archive-mark span {
@@ -487,6 +493,28 @@ h4 {
 
 .archive-mark strong {
     color: #e3c75f;
+}
+
+.archive-socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 10px;
+}
+
+.archive-socials a {
+    color: #ffe89c;
+    font-size: 1.3rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.archive-socials a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .museum-display {
@@ -947,103 +975,104 @@ footer p {
         filter: blur(0px);
     }
 }
+
 .constellation-archive {
-            position: relative;
-            width: 100%;
-            margin-top: 2rem;
-            padding: 2rem 0;
-        }
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 2rem 0;
+}
 
-        .bio-svg-network {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
+.bio-svg-network {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
 
-        .bio-svg-network line {
-            stroke: rgba(212, 175, 55, 0.35);
-            stroke-width: 1.5;
-            stroke-dasharray: 4 4;
-        }
+.bio-svg-network line {
+    stroke: rgba(212, 175, 55, 0.35);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+}
 
-        .bio-nodes-container {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
-            align-items: start;
-        }
+.bio-nodes-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
 
-        .bio-node {
-            position: relative;
-            background: rgba(10, 15, 28, 0.65);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            padding: 1.5rem;
-            border-radius: 4px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(212, 175, 55, 0.05);
-            transition: all 0.4s ease;
-        }
+.bio-node {
+    position: relative;
+    background: rgba(10, 15, 28, 0.65);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(212, 175, 55, 0.05);
+    transition: all 0.4s ease;
+}
 
-        .bio-node:hover {
-            border-color: rgba(212, 175, 55, 0.8);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-            transform: translateY(-3px);
-        }
+.bio-node:hover {
+    border-color: rgba(212, 175, 55, 0.8);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    transform: translateY(-3px);
+}
 
-        .bio-node::before {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #d4af37;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #d4af37, 0 0 12px #ffffff;
-        }
+.bio-node::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #d4af37;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #d4af37, 0 0 12px #ffffff;
+}
 
-        .node-alpha {
-            grid-column: 1 / span 8;
-            margin-left: 1rem;
-        }
-        .node-alpha::before { top: -4px; left: -4px; }
+.node-alpha {
+    grid-column: 1 / span 8;
+    margin-left: 1rem;
+}
+.node-alpha::before { top: -4px; left: -4px; }
 
-        .node-beta {
-            grid-column: 5 / span 8;
-            margin-top: 1rem;
-        }
-        .node-beta::before { bottom: -4px; right: -4px; }
+.node-beta {
+    grid-column: 5 / span 8;
+    margin-top: 1rem;
+}
+.node-beta::before { bottom: -4px; right: -4px; }
 
-        .node-gamma {
-            grid-column: 2 / span 9;
-            margin-top: 1rem;
-        }
-        .node-gamma::before { top: -4px; right: -4px; }
+.node-gamma {
+    grid-column: 2 / span 9;
+    margin-top: 1rem;
+}
+.node-gamma::before { top: -4px; right: -4px; }
 
-        .node-tag {
-            display: inline-block;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.7rem;
-            color: #d4af37;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-            opacity: 0.8;
-        }
+.node-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: #d4af37;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
 
-        .bio-node p {
-            margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
+.bio-node p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
 
-        @media (max-width: 768px) {
-            .node-alpha, .node-beta, .node-gamma {
-                grid-column: 1 / span 12;
-                margin: 0 0 1rem 0;
-            }
-            .bio-svg-network { display: none; }
-        }
+@media (max-width: 768px) {
+    .node-alpha, .node-beta, .node-gamma {
+        grid-column: 1 / span 12;
+        margin: 0 0 1rem 0;
+    }
+    .bio-svg-network { display: none; }
+}
