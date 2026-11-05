@@ -1,0 +1,21 @@
+/* Neutral concrete, dark pipe interiors, and muted water tones for the pipe schematic. */
+.pipe-map,.pipe-diagram{background:#20211e}
+.pipe-shaft{stroke:url(#concreteGradient);stroke-width:142}
+.pipe-water{stroke:url(#channelGradient);stroke-width:88}
+.pipe-fluid{fill:none;stroke:url(#murkyWater);stroke-width:26;stroke-linecap:round;opacity:.76}
+.pipe-flowline{stroke:#c0bda7;stroke-width:2;stroke-dasharray:3 28;opacity:.42}
+.pipe-edge{stroke:#3d4442;stroke-width:10;opacity:.9}
+.pipe-end{stroke:#a0a19a;stroke-width:9}
+.pipe-label{fill:#e5e3dc;stroke:#1b1d1b;font:700 18px 'DM Sans',sans-serif;letter-spacing:1px}
+.pipe-caption{fill:#d0cec6;font-weight:700}
+.pipe-junction{filter:none}
+.pipe-junction circle{fill:#292e2b;stroke:#b5b7ae;stroke-width:8}
+.pipe-junction .debris-leaf{stroke:#605b45;stroke-width:1.5}
+.pipe-junction .leaf-one{fill:#77734f}.pipe-junction .leaf-two{fill:#8a7650}.pipe-junction .leaf-three{fill:#656547}
+.pipe-junction .debris-twig{fill:none;stroke:#8b7755;stroke-width:4;stroke-linecap:round}
+.pipe-grid{opacity:.55}
+.map-demo-badge{display:inline-flex;align-items:center;gap:6px;margin-top:7px;border:1px solid #9a9a8f;border-radius:20px;padding:3px 9px;background:#e8e5dc;color:#5a5b54;font-size:.61rem;font-weight:700;letter-spacing:.08em}
+.map-demo-badge i{font-size:.72rem}
+.pipe-a{background:#a5a49b}.pipe-b{background:#85867f}.pipe-c{background:#6e7471}.pipe-d{background:#545a58}
+.status-critical .marker-core{filter:drop-shadow(0 0 4px #e34b55)}
+@media(max-width:575.98px){.pipe-label{font-size:22px}.pipe-caption{font-size:17px}}
