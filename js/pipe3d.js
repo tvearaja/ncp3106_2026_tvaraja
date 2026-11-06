@@ -12,9 +12,16 @@ if(!host||!flat)throw new Error('FlowGuard pipe viewer was not found.');
 const scene=new THREE.Scene();
 scene.background=new THREE.Color('#141a1b');
 const aspect=()=>Math.max(host.clientWidth,1)/Math.max(host.clientHeight,1);
-const camera3d=new THREE.PerspectiveCamera(37,aspect(),.1,120);
-camera3d.position.set(11.8,13.5,15.8);
-camera3d.lookAt(0,0,0);
+const cameraFov=37;
+const camera3d=new THREE.PerspectiveCamera(cameraFov,aspect(),.1,120);
+camera3d.up.set(0,0,-1);
+function setHomeCamera(){
+  const halfFov=Math.tan(THREE.MathUtils.degToRad(cameraFov/2));
+  const distance=Math.max(19,17/(2*halfFov*aspect()),9.8/(2*halfFov))*1.08;
+  camera3d.position.set(.12,distance,distance*.12);
+  camera3d.lookAt(0,0,0);
+}
+setHomeCamera();
 const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:'high-performance'});
 renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
 renderer.setSize(host.clientWidth||900,host.clientHeight||460);
@@ -78,13 +85,12 @@ function addLabel(text,position){
   const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,transparent:true,depthTest:false}));sprite.position.set(...position);sprite.scale.set(1.85,.46,1);sprite.renderOrder=5;model.add(sprite);
 }
 
-// Coordinates follow the supplied four-pipe diagram: inlet from the left, two vertical branches,
-// a central riser, and the labeled outlet branch to the right.
-addPipe('Inlet branch',[-8.1,0,0],[-3.35,0,0],{openStart:true});
+// Keep the full horizontal route continuous across the inlet, both junctions, and the outlet,
+// matching the supplied 2D plan. Pipe A/B share the left riser; Pipe C is the center riser.
+addPipe('Pipe D',[-8.1,0,0],[8.1,0,0],{openStart:true,openEnd:true,labelPosition:[4.7,.88,-.82]});
 addPipe('Pipe A',[-3.35,0,0],[-3.35,0,4.45],{openEnd:true,labelPosition:[-4.65,.88,2.2]});
 addPipe('Pipe B',[-3.35,0,-4.45],[-3.35,0,0],{openStart:true,labelPosition:[-4.65,.88,-2.25]});
 addPipe('Pipe C',[1.2,0,-4.45],[1.2,0,4.45],{openStart:true,openEnd:true,labelPosition:[2.55,.88,-2.2]});
-addPipe('Pipe D',[1.2,0,0],[8.1,0,0],{openEnd:true,labelPosition:[4.7,.88,-.82]});
 
 // Coupling sleeves show the joins at the two main crossings.
 function addCoupling(x,z){const sleeve=new THREE.Mesh(new THREE.CylinderGeometry(.7,.7,1.42,40,1,true),clampMat);sleeve.rotation.z=Math.PI/2;sleeve.position.set(x,.02,z);sleeve.castShadow=true;model.add(sleeve);}
@@ -124,7 +130,7 @@ renderer.domElement.addEventListener('pointermove',event=>{const rect=renderer.d
 
 let controls;
 function recreateControls(){
-  controls?.dispose();controls=new OrbitControls(camera3d,renderer.domElement);controls.target.set(0,0,0);controls.enableDamping=true;controls.dampingFactor=.075;controls.enablePan=true;controls.enableZoom=true;controls.minDistance=10;controls.maxDistance=31;controls.minPolarAngle=.16;controls.maxPolarAngle=1.47;controls.mouseButtons={LEFT:THREE.MOUSE.ROTATE,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.PAN};controls.touches={ONE:THREE.TOUCH.ROTATE,TWO:THREE.TOUCH.DOLLY_PAN};controls.update();
+  controls?.dispose();controls=new OrbitControls(camera3d,renderer.domElement);controls.target.set(0,0,0);controls.enableDamping=true;controls.dampingFactor=.075;controls.enablePan=true;controls.enableZoom=true;controls.minDistance=10;controls.maxDistance=42;controls.minPolarAngle=.08;controls.maxPolarAngle=1.47;controls.mouseButtons={LEFT:THREE.MOUSE.ROTATE,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.PAN};controls.touches={ONE:THREE.TOUCH.ROTATE,TWO:THREE.TOUCH.DOLLY_PAN};controls.update();
 }
 function setButtons(mode){buttons.forEach(button=>{const active=button.dataset.pipeView===mode;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});}
 function setMode(mode,reset=false){
@@ -132,7 +138,7 @@ function setMode(mode,reset=false){
     view3d.style.display='none';flat.style.display='block';window.flowguardPipeFallback?.setModeFromScene('2d');setButtons('2d');if(hint)hint.innerHTML='<i class="bi bi-arrows-move"></i> 2D schematic';return;
   }
   window.flowguardPipeFallback?.deactivate();flat.style.display='none';view3d.style.display='block';
-  if(reset){camera3d.position.set(11.8,13.5,15.8);camera3d.lookAt(0,0,0);}
+  if(reset)setHomeCamera();
   recreateControls();setButtons('3d');if(hint)hint.innerHTML='<i class="bi bi-arrows-move"></i> Drag to rotate';resize();
 }
 buttons.forEach(button=>button.addEventListener('click',()=>setMode(button.dataset.pipeView,true)));
