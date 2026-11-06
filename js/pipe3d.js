@@ -14,11 +14,12 @@ scene.background=new THREE.Color('#141a1b');
 const aspect=()=>Math.max(host.clientWidth,1)/Math.max(host.clientHeight,1);
 const cameraFov=37;
 const camera3d=new THREE.PerspectiveCamera(cameraFov,aspect(),.1,120);
-camera3d.up.set(0,0,-1);
 function setHomeCamera(){
   const halfFov=Math.tan(THREE.MathUtils.degToRad(cameraFov/2));
-  const distance=Math.max(19,17/(2*halfFov*aspect()),9.8/(2*halfFov))*1.08;
-  camera3d.position.set(.12,distance,distance*.12);
+  const elevation=THREE.MathUtils.degToRad(55);
+  const projectedDepth=9.8*Math.sin(elevation)+1.4*Math.cos(elevation);
+  const distance=Math.max(15.5,17/(2*halfFov*aspect()),projectedDepth/(2*halfFov))*1.05;
+  camera3d.position.set(distance*.035,distance*Math.sin(elevation),distance*Math.cos(elevation));
   camera3d.lookAt(0,0,0);
 }
 setHomeCamera();
@@ -143,6 +144,7 @@ function setMode(mode,reset=false){
 }
 buttons.forEach(button=>button.addEventListener('click',()=>setMode(button.dataset.pipeView,true)));
 resetButton?.addEventListener('click',()=>setMode('3d',true));
+document.addEventListener('fullscreenchange',()=>requestAnimationFrame(resize));
 function focusDrain(id){const marker=markersById.get(String(id));if(!marker)return;controls.target.set(marker.position.x,0,marker.position.z);controls.update();marker.scale.setScalar(1.5);setTimeout(()=>marker.scale.setScalar(1),1800);}
 function resize(){const width=host.clientWidth,height=host.clientHeight;if(!width||!height)return;renderer.setSize(width,height,false);camera3d.aspect=width/height;camera3d.updateProjectionMatrix();}
 const resizeObserver=new ResizeObserver(resize);resizeObserver.observe(host);window.addEventListener('resize',resize);

@@ -4,6 +4,8 @@
   const hint = document.querySelector('.pipe-drag-hint');
   const buttons = [...document.querySelectorAll('[data-pipe-view]')];
   const resetButton = document.querySelector('#resetPipeView');
+  const fullscreenButton = document.querySelector('#toggleMapFullscreen');
+  const mapCard = viewer?.closest('.map-card');
   if (!viewer || !canvasView) return;
 
   let mode = '3d';
@@ -32,6 +34,20 @@
   }
   buttons.forEach(button => button.addEventListener('click', () => setMode(button.dataset.pipeView, true)));
   resetButton?.addEventListener('click', () => setMode('3d', true));
+  function updateFullscreenButton() {
+    const active = document.fullscreenElement === mapCard;
+    if (!fullscreenButton) return;
+    fullscreenButton.setAttribute('aria-label', active ? 'Exit full screen map' : 'Maximize map');
+    fullscreenButton.title = active ? 'Exit full screen' : 'Maximize map';
+    fullscreenButton.innerHTML = `<i class="bi ${active ? 'bi-fullscreen-exit' : 'bi-arrows-fullscreen'}"></i>`;
+  }
+  fullscreenButton?.addEventListener('click', async () => {
+    try {
+      if (document.fullscreenElement === mapCard) await document.exitFullscreen();
+      else await mapCard?.requestFullscreen?.();
+    } catch (error) { console.warn('Map full screen is unavailable in this browser.', error); }
+  });
+  document.addEventListener('fullscreenchange', updateFullscreenButton);
 
   viewer.addEventListener('pointerdown', event => {
     if (actualSceneReady() || mode !== '3d') return;
