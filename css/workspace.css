@@ -1,0 +1,239 @@
+:root{--workspace-header:82px;--workspace-side:320px}
+html,body{width:100%;height:100%;overflow:hidden}
+body{height:100dvh;display:flex;flex-direction:column}
+.app-navbar{position:relative!important;z-index:20;flex:0 0 var(--workspace-header);height:var(--workspace-header);min-height:var(--workspace-header);padding:0!important}
+.app-navbar>.container-fluid{height:100%;display:flex;align-items:center}
+.flowguard-brand img{width:128px;height:66px;object-fit:contain}
+.workspace-brand-label{margin-left:18px;padding-left:18px;border-left:1px solid var(--border);color:var(--muted);font-size:.68rem;font-weight:800;letter-spacing:.12em}
+.workspace-brand-label .live-dot{width:7px;height:7px}
+main#top.app-workspace{position:relative;isolation:isolate;flex:1 1 auto;width:100%;height:calc(100dvh - var(--workspace-header));min-height:0;max-width:none;margin:0;padding:0!important;overflow:hidden}
+main#top>.page-heading,main#top>#dataError,main#top>#demoNotice,main#top>section:not(#map-section):not(#alerts-section),main#top>.app-footer{display:none!important}
+#map-section{position:relative;width:100%;height:100%;min-height:0;margin:0!important;overflow:hidden}
+#map-section>.row{display:flex;flex-wrap:nowrap;align-items:stretch!important;width:100%;height:100%;margin:0;gap:12px;--bs-gutter-x:0}
+#map-section>.row>div:first-child{flex:0 0 var(--workspace-side);width:var(--workspace-side);max-width:var(--workspace-side);height:100%;padding:0}
+#map-section>.row>div:last-child{flex:1 1 auto;width:auto;max-width:none;min-width:0;height:100%;padding:0}
+.contact-sidebar{height:100%!important;border-radius:0 16px 16px 0;background:var(--surface);box-shadow:3px 0 0 var(--border);overflow:hidden}
+.monitor-sidebar-body{height:100%;overflow:hidden;display:flex;flex-direction:column}
+.monitor-sidebar-heading{padding:25px 24px 20px;border-bottom:1px solid color-mix(in srgb,var(--border) 24%,transparent)}
+.monitor-sidebar-heading .eyebrow{display:block}
+.monitor-sidebar-heading h2{font-size:1.25rem;margin:.45rem 0 .1rem;color:var(--heading)}
+.monitor-sidebar-heading>small{color:var(--muted);font-size:.75rem}
+.monitor-status-list{display:flex;flex-direction:column;padding:8px 14px;overflow:hidden}
+.monitor-status-item{min-height:83px;padding:12px 9px;display:flex;align-items:center;gap:12px;border-bottom:1px solid color-mix(in srgb,var(--border) 19%,transparent)}
+.monitor-status-item:last-child{border-bottom:0}
+.monitor-status-item>div{min-width:0;display:flex;flex-direction:column;gap:2px}
+.monitor-status-label{font-size:.7rem;font-weight:800;letter-spacing:.035em;color:var(--muted)}
+.monitor-status-item strong{font-size:.91rem;color:var(--heading);line-height:1.25}
+.monitor-status-item small{font-size:.68rem;color:var(--muted);line-height:1.35}
+.status-light{width:10px;height:10px;flex:0 0 10px;border-radius:50%;background:#d0a51f;box-shadow:0 0 0 4px color-mix(in srgb,#d0a51f 14%,transparent)}
+.status-light[data-state=normal]{background:#43a765;box-shadow:0 0 0 4px color-mix(in srgb,#43a765 14%,transparent)}
+.status-light[data-state=warning]{background:#d0a51f;box-shadow:0 0 0 4px color-mix(in srgb,#d0a51f 14%,transparent)}
+.status-light[data-state=critical],.status-light[data-state=offline]{background:#c63d50;box-shadow:0 0 0 4px color-mix(in srgb,#c63d50 14%,transparent)}
+.monitor-status-main{flex:1}
+.monitor-status-item .system-pill{align-self:flex-start;max-width:100%;padding:0;border:0;background:none;box-shadow:none;gap:0}
+.monitor-status-item .system-pill .status-dot{width:8px;height:8px;flex:0 0 8px}
+.monitor-status-item .system-pill strong{font-size:.85rem}
+.monitor-status-item .system-pill small{font-size:.65rem;white-space:normal}
+.status-refresh{margin-left:auto;align-self:center;color:var(--muted);font-size:.8rem}
+.status-refresh.spin{animation:workspace-spin .8s linear infinite}
+@keyframes workspace-spin{to{transform:rotate(360deg)}}
+.hero-map-card{position:relative;display:flex;flex-direction:column;height:100%!important;min-height:0!important;border-radius:16px 0 0 16px;box-shadow:none;overflow:hidden}
+.hero-map-card>.card-header{position:absolute;z-index:4;top:12px;left:12px;right:min(370px,35vw);display:flex;flex-direction:row!important;align-items:center!important;justify-content:space-between;gap:14px;padding:12px 14px;border:1px solid color-mix(in srgb,var(--border) 35%,transparent);border-radius:13px;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 5px 20px rgba(24,40,45,.1)}
+.hero-map-card>.card-header>div:first-child{min-width:155px}
+.hero-map-card>.card-header h2{font-size:1rem}
+.hero-map-card .map-demo-badge{font-size:.54rem;margin-left:0;margin-top:4px}
+.hero-map-card .map-legend{justify-content:flex-start;gap:7px}
+.hero-map-card .map-legend span{font-size:.57rem}
+.pipe-map-tools{gap:7px}
+.pipe-view-btn{padding:4px 9px}
+.pipe-drag-hint{font-size:.61rem}
+.pipe-reset-btn{width:29px;height:29px;flex:0 0 29px}
+#drainMap.pipe-map{position:relative;flex:1 1 auto;width:100%;height:100%!important;min-height:0!important;max-height:none;border-radius:0;background:#141a1b;overflow:hidden}
+.pipe-3d-view,.pipe-2d-view{inset:0;width:100%;height:100%}
+#alerts-section{position:fixed;z-index:8;top:calc(var(--workspace-header) + 14px);right:18px;width:min(350px,calc(100vw - var(--workspace-side) - 44px));max-height:min(440px,calc(100dvh - var(--workspace-header) - 30px));margin:0!important;display:block!important;overflow:hidden}
+#alerts-section>.col-12{width:100%;padding:0}
+#alerts-section .alerts-card{max-height:inherit;border:1px solid color-mix(in srgb,var(--border) 52%,transparent);border-radius:15px;background:color-mix(in srgb,var(--surface) 87%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 10px 30px rgba(18,40,52,.17);overflow:hidden}
+#alerts-section .card-header{padding:13px 16px;background:transparent}
+#alerts-section .card-header h2{font-size:1rem}
+#alerts-section .list-group{max-height:320px;overflow-y:auto;overscroll-behavior:contain}
+#alerts-section .list-group-item{padding:10px 14px;background:color-mix(in srgb,var(--surface) 74%,transparent)}
+#alerts-section .list-group-item p{font-size:.68rem;margin:.2rem 0 0}
+#alerts-section .card-footer{padding:9px 14px;background:transparent}
+main#top:fullscreen{width:100vw;height:100dvh;max-width:none;background:var(--bg)}
+main#top:fullscreen #alerts-section{position:absolute;top:14px;right:18px}
+main#top:fullscreen #map-section{height:100dvh}
+@media(max-width:1199.98px){:root{--workspace-side:280px}.hero-map-card>.card-header{right:340px}.hero-map-card>.card-header .map-legend{display:none}}
+@media(max-width:767.98px){:root{--workspace-header:72px;--workspace-side:175px}.flowguard-brand img{width:106px;height:60px}.workspace-brand-label{display:none}.nav-actions .btn{padding:0 10px}.hero-map-card>.card-header{left:7px;right:7px;top:7px;max-width:calc(100% - 14px);padding:8px;gap:6px}.hero-map-card>.card-header>div:first-child{min-width:0}.hero-map-card>.card-header h2{font-size:.78rem}.hero-map-card .eyebrow{font-size:.53rem}.hero-map-card .map-legend{display:none}.hero-map-card .pipe-drag-hint{display:none}.pipe-map-tools{gap:4px}.pipe-view-btn{padding:3px 6px;font-size:.62rem}.pipe-reset-btn{width:25px;height:25px;flex-basis:25px}.contact-sidebar{border-radius:0 12px 12px 0}.monitor-sidebar-heading{padding:17px 13px 12px}.monitor-sidebar-heading h2{font-size:1rem}.monitor-status-list{padding:4px 7px}.monitor-status-item{min-height:76px;padding:9px 5px;gap:8px}.monitor-status-label{font-size:.62rem}.monitor-status-item strong{font-size:.78rem}.monitor-status-item small{font-size:.61rem}#alerts-section{top:calc(var(--workspace-header) + 90px);right:8px;width:min(270px,calc(100vw - var(--workspace-side) - 16px));max-height:calc(100dvh - var(--workspace-header) - 108px)}#alerts-section .list-group{max-height:260px}}
+@media(max-height:700px){.monitor-sidebar-heading{padding-top:14px;padding-bottom:12px}.monitor-status-item{min-height:70px;padding-top:8px;padding-bottom:8px}.hero-map-card>.card-header{top:8px;padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){.status-refresh.spin{animation:none}}
+.console-sidebar{width:100%;border-radius:0 16px 16px 0}
+.console-sidebar-shell{height:100%;display:flex;flex-direction:column;overflow:hidden}
+.console-sidebar-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:22px 20px 18px;border-bottom:1px solid color-mix(in srgb,var(--border) 24%,transparent)}
+.console-sidebar-header h2{margin:.4rem 0 0;font-size:1.18rem;color:var(--heading)}
+.console-icon-button{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border:1px solid var(--border);border-radius:9px;color:var(--text);background:var(--surface);box-shadow:1px 2px 0 color-mix(in srgb,var(--border) 50%,transparent)}
+.console-icon-button:hover{background:var(--surface-2)}
+.console-tabs{display:grid;gap:7px;padding:14px 12px}
+.console-tab{width:100%;min-height:54px;display:flex;align-items:center;gap:12px;padding:8px 11px;border:1px solid transparent;border-radius:11px;background:transparent;color:var(--text);font-size:.82rem;font-weight:700;text-align:left}
+.console-tab:hover,.console-tab.active{background:var(--surface-2);border-color:color-mix(in srgb,var(--border) 25%,transparent)}
+.console-tab.active{color:var(--heading);box-shadow:inset 3px 0 0 var(--blue-strong)}
+.console-tab-icon{position:relative;width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:9px;background:var(--blue);color:#31556b;font-size:1rem}
+.console-tab-icon .status-light{position:absolute;right:-3px;top:-3px;width:9px;height:9px;min-height:9px;flex-basis:9px;border:2px solid var(--surface);box-shadow:none}
+.console-sidebar-foot{margin-top:auto;padding:14px 20px;border-top:1px solid color-mix(in srgb,var(--border) 20%,transparent);font-size:.68rem;font-weight:700;color:var(--muted)}
+.console-sidebar-foot .live-dot{width:7px;height:7px}
+.console-detail-backdrop{position:absolute;z-index:18;inset:0;display:grid;place-items:center;padding:22px;background:rgba(19,29,32,.16);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.console-detail-backdrop[hidden]{display:none!important}
+.console-detail-card{width:min(500px,calc(100vw - var(--workspace-side) - 44px));max-height:min(78dvh,720px);display:flex;flex-direction:column;border:1.5px solid var(--border);border-radius:18px;background:var(--surface);box-shadow:6px 8px 0 color-mix(in srgb,var(--border) 55%,transparent);overflow:hidden}
+.console-detail-header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:19px 22px 15px;border-bottom:1px solid color-mix(in srgb,var(--border) 24%,transparent)}
+.console-detail-header h2{margin:.35rem 0 0;font-size:1.3rem;color:var(--heading)}
+.console-detail-content{overflow:auto;padding:18px 22px 22px;overscroll-behavior:contain}
+.console-pane{display:none}
+.console-pane.active{display:block}
+.console-pane-intro{margin:0 0 14px;color:var(--muted);font-size:.78rem}
+.console-status-list{display:grid;gap:8px}
+.console-status-row{min-height:68px;display:flex;align-items:center;gap:13px;padding:11px 12px;border:1px solid color-mix(in srgb,var(--border) 24%,transparent);border-radius:11px;background:var(--surface-2)}
+.console-status-row>div{min-width:0;display:grid;gap:2px}
+.console-status-row small{color:var(--muted);font-size:.67rem;font-weight:800;letter-spacing:.04em}
+.console-status-row strong{color:var(--heading);font-size:.87rem}
+.console-status-row p{margin:0;color:var(--muted);font-size:.7rem}
+.console-status-row .status-light{width:9px;height:9px;min-height:9px;flex:0 0 9px}
+.console-status-row .status-refresh{margin-left:auto}
+.drain-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:14px}
+.drain-summary-grid article{display:grid;gap:3px;padding:11px 9px;border:1px solid color-mix(in srgb,var(--border) 22%,transparent);border-radius:10px;background:var(--surface-2)}
+.drain-summary-grid small{font-size:.63rem;color:var(--muted);font-weight:700}
+.drain-summary-grid strong{font:700 1.1rem 'Space Grotesk',sans-serif;color:var(--heading)}
+.drain-tab-list{display:grid;gap:7px;max-height:350px;overflow:auto;overscroll-behavior:contain}
+.drain-console-row{width:100%;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px 11px;border:1px solid color-mix(in srgb,var(--border) 22%,transparent);border-radius:10px;background:var(--surface);color:var(--text);text-align:left}
+.drain-console-row:hover{background:var(--surface-2)}
+.drain-console-row .status-light{width:9px;height:9px;min-height:9px;flex-basis:9px}
+.drain-console-row strong,.drain-console-row small{display:block}
+.drain-console-row strong{font-size:.75rem;color:var(--heading)}
+.drain-console-row small{font-size:.65rem;color:var(--muted)}
+.drain-console-row em{font-style:normal;font-size:.67rem;font-weight:700;color:var(--muted);text-align:right}
+.console-contact-list{display:grid;gap:8px}
+.console-contact-link{min-height:64px;display:flex;align-items:center;gap:10px;padding:10px;border:1px solid color-mix(in srgb,var(--border) 25%,transparent);border-radius:11px;text-decoration:none;color:var(--text);background:var(--surface)}
+.console-contact-link:hover{background:var(--surface-2)}
+.console-contact-link>span:nth-child(2){min-width:0;flex:1}
+.console-contact-link strong,.console-contact-link small{display:block}
+.console-contact-link strong{font-size:.79rem;color:var(--heading)}
+.console-contact-link small{font-size:.65rem;color:var(--muted)}
+.console-contact-link b{font-size:.78rem;color:var(--heading);white-space:nowrap}
+.console-contact-link>i:last-child{font-size:.72rem;color:var(--blue-strong)}
+.console-contact-link:not([href]){opacity:.75}
+.workspace-reopen{position:absolute;z-index:12;top:50%;left:12px;transform:translateY(-50%);width:38px;height:42px;display:grid;place-items:center;border:1px solid var(--border);border-radius:0 10px 10px 0;background:var(--surface);color:var(--heading);box-shadow:2px 3px 0 var(--border)}
+.workspace-reopen[hidden],.notice-reopen[hidden],.weather-reopen[hidden]{display:none!important}
+main#top.console-collapsed{--workspace-side:0px}
+main#top.console-collapsed #map-section>.row{gap:0}
+main#top.console-collapsed #map-section>.row>div:first-child{width:0;max-width:0;flex-basis:0;overflow:hidden;padding:0}
+#alerts-section.is-dismissed{display:none!important}
+.notice-header-actions{display:flex;align-items:center;gap:9px}
+#alerts-section .card-header{padding-right:11px}
+.notice-reopen{position:fixed;z-index:10;top:50%;right:12px;transform:translateY(-50%);width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:2px solid #fff;border-radius:50%;background:#c63d50;color:#fff;box-shadow:0 3px 0 #7f2634;font-size:1.2rem}
+.notice-reopen span{position:absolute;right:-4px;top:-4px;width:17px;height:17px;display:grid;place-items:center;border:1px solid var(--surface);border-radius:50%;background:var(--yellow);color:#263238;font-size:.62rem;font-weight:900}
+.weather-widget{position:fixed;z-index:9;right:18px;bottom:17px;width:min(292px,calc(100vw - 28px));padding:13px 15px 11px;border:1px solid color-mix(in srgb,var(--border) 48%,transparent);border-radius:15px;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 9px 28px rgba(18,40,52,.18)}
+.weather-widget.is-dismissed{display:none!important}
+.weather-widget header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.weather-widget-title{display:flex;align-items:center;gap:10px;min-width:0}
+.weather-widget-title .weather-icon{width:34px;height:34px;flex:0 0 34px;font-size:1rem}
+.weather-widget-title>div{min-width:0;display:grid}
+.weather-widget-title .eyebrow{font-size:.56rem}
+.weather-widget-title strong{overflow:hidden;color:var(--heading);font-size:.75rem;text-overflow:ellipsis;white-space:nowrap}
+.weather-widget .console-icon-button{width:28px;height:28px;flex-basis:28px;box-shadow:none}
+.weather-widget-main{display:grid;margin:8px 0 9px}
+.weather-widget-main>strong{color:var(--heading);font:700 1.8rem 'Space Grotesk',sans-serif;line-height:1}
+.weather-widget-main>span{color:var(--muted);font-size:.68rem}
+.weather-widget-metrics{display:flex;gap:18px;border-top:1px solid color-mix(in srgb,var(--border) 23%,transparent);padding-top:8px}
+.weather-widget-metrics span{display:grid;grid-template-columns:auto auto;align-items:center;column-gap:6px}
+.weather-widget-metrics i{grid-row:span 2;color:var(--blue-strong)}
+.weather-widget-metrics b{color:var(--heading);font-size:.7rem}
+.weather-widget-metrics small{color:var(--muted);font-size:.59rem}
+.weather-widget-updated{display:block;margin-top:8px;color:var(--muted);font-size:.58rem}
+.weather-reopen{position:fixed;z-index:9;right:18px;bottom:17px;width:44px;height:44px;display:grid;place-items:center;border:1.5px solid var(--border);border-radius:50%;background:var(--surface);color:var(--blue-strong);box-shadow:2px 3px 0 var(--border);font-size:1.15rem}
+main#top:fullscreen .weather-widget{position:absolute;right:18px;bottom:17px}
+main#top:fullscreen .weather-reopen{position:absolute}
+main#top:fullscreen .notice-reopen{position:absolute}
+@media(max-width:767.98px){.console-sidebar-header{padding:14px 12px}.console-sidebar-header h2{font-size:.92rem}.console-tabs{padding:10px 7px}.console-tab{min-height:47px;padding:7px;font-size:.68rem;gap:7px}.console-tab-icon{width:25px;height:25px;flex-basis:25px;font-size:.82rem}.console-sidebar-foot{padding:10px 11px;font-size:.58rem}.console-detail-card{width:min(500px,calc(100vw - 24px));max-height:76dvh}.console-detail-header{padding:14px 15px 11px}.console-detail-content{padding:14px 15px 17px}.drain-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.console-contact-link{gap:7px;padding:8px}.sidebar-contact-icon{width:29px;height:29px}.console-contact-link small{font-size:.59rem}.weather-widget{right:10px;bottom:10px;width:min(260px,calc(100vw - 20px))}.weather-reopen{right:10px;bottom:10px}.notice-reopen{right:8px;width:38px;height:38px}}
+.critical-contacts{display:grid;gap:6px;margin-top:14px;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--border) 26%,transparent)}.critical-contacts>strong{margin-bottom:2px;color:var(--heading);font-size:.78rem}.critical-contacts a{display:flex;justify-content:space-between;gap:10px;padding:6px 8px;border:1px solid color-mix(in srgb,var(--border) 22%,transparent);border-radius:8px;color:var(--text);font-size:.72rem;text-decoration:none}.critical-contacts a[href]{color:var(--blue-strong)}.critical-contacts b{color:var(--heading)}
+
+/* Keep the workspace map full width at every Bootstrap breakpoint. */
+#map-section>.row>div:first-child{flex:0 0 var(--workspace-side)!important;width:var(--workspace-side)!important;max-width:var(--workspace-side)!important}
+#map-section>.row>div:last-child{flex:1 1 0!important;width:auto!important;max-width:none!important;min-width:0!important}
+#map-section .hero-map-card{width:100%;min-width:0}
+#map-section .hero-map-card>.card-footer{display:none!important}
+#drainMap.pipe-map{flex:1 1 auto;width:100%;height:100%!important;min-height:0!important;max-height:none}
+main#top.console-collapsed #map-section>.row>div:first-child{flex:0 0 0!important;width:0!important;max-width:0!important}
+main#top.console-collapsed #map-section>.row>div:last-child{flex:1 1 0!important;width:auto!important}
+/* Fullscreen is requested on the dashboard workspace, so size that element and its map descendants directly. */
+main#top:fullscreen{position:fixed;inset:0;display:flex;flex:0 0 100dvh;width:100vw;height:100dvh;min-height:0;margin:0;padding:0!important;overflow:hidden;background:var(--bg)}
+main#top:fullscreen #map-section{flex:1 1 auto;width:100vw;height:100dvh;min-height:0;margin:0!important}
+main#top:fullscreen #map-section>.row{width:100%;height:100%;min-height:0;gap:0}
+main#top:fullscreen #map-section>.row>div:first-child{display:none!important}
+main#top:fullscreen #map-section>.row>div:last-child{flex:1 1 0!important;width:100%!important;min-width:0!important;height:100%;padding:0}
+main#top:fullscreen .hero-map-card{display:flex;flex-direction:column;width:100%;height:100%!important;min-height:0!important;border:0;border-radius:0}
+main#top:fullscreen .hero-map-card>.card-header{flex:0 0 auto}
+main#top:fullscreen #drainMap.pipe-map{position:relative;flex:1 1 auto;width:100%;height:100%!important;min-height:0!important;max-height:none}
+/* Anchor the workspace row to the full main area; Bootstrap's responsive column
+   widths otherwise leave a dead strip beside the map at wide breakpoints. */
+main#top.app-workspace{min-width:0}
+main#top.app-workspace #map-section{position:absolute;inset:0;width:100%;height:100%;padding:0;}
+main#top.app-workspace #map-section>.row{display:grid!important;grid-template-columns:minmax(0,var(--workspace-side)) minmax(0,1fr);width:100%;height:100%;gap:12px;margin:0!important;}
+main#top.app-workspace #map-section>.row>div:first-child{display:block;min-width:0;width:auto!important;max-width:none!important;height:100%;padding:0;}
+main#top.app-workspace #map-section>.row>div:last-child{display:flex;min-width:0;width:auto!important;max-width:none!important;height:100%;padding:0;}
+main#top.app-workspace.console-collapsed #map-section>.row{grid-template-columns:minmax(0,1fr);gap:0}
+main#top.app-workspace.console-collapsed #map-section>.row>div:first-child{display:none!important}
+main#top.app-workspace .hero-map-card{flex:1 1 auto;width:100%;height:100%!important;min-width:0;min-height:0!important;margin:0}
+main#top.app-workspace #drainMap.pipe-map{position:relative;flex:1 1 auto;width:100%;height:100%!important;min-height:0!important;max-height:none}
+main#top:fullscreen.app-workspace #map-section{position:absolute;inset:0;width:100%;height:100%;}
+main#top:fullscreen.app-workspace #map-section>.row{grid-template-columns:minmax(0,1fr);gap:0}
+main#top:fullscreen.app-workspace #map-section>.row>div:last-child{width:100%!important;height:100%}
+main#top:fullscreen.app-workspace .hero-map-card{height:100%!important}
+@media(max-width:767.98px){main#top.app-workspace:not(.console-collapsed){--workspace-side:min(42vw,320px)}}
+/* Treat fullscreen as a viewport canvas: the row/grid must not inherit Bootstrap
+   percentage column widths, and its child card must be allowed to shrink/grow. */
+html:has(main#top:fullscreen),body:has(main#top:fullscreen){width:100vw!important;height:100dvh!important;overflow:hidden!important}
+main#top.app-workspace:fullscreen{position:fixed!important;inset:0!important;display:block!important;flex:none!important;width:100vw!important;height:100dvh!important;min-height:100dvh!important;max-width:none!important;margin:0!important;padding:0!important;overflow:hidden!important}
+main#top.app-workspace:fullscreen #map-section{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
+main#top.app-workspace:fullscreen #map-section>.row{position:absolute!important;inset:0!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr)!important;width:100%!important;height:100%!important;min-height:0!important;gap:0!important;margin:0!important;padding:0!important}
+main#top.app-workspace:fullscreen #map-section>.row>div:first-child{display:none!important}
+main#top.app-workspace:fullscreen #map-section>.row>div:last-child{position:relative!important;display:flex!important;grid-column:1;grid-row:1;inset:auto!important;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-width:none!important;margin:0!important;padding:0!important}
+main#top.app-workspace:fullscreen .hero-map-card{position:relative!important;display:flex!important;flex:1 1 0!important;flex-direction:column!important;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;overflow:hidden!important;border:0!important;border-radius:0!important}
+main#top.app-workspace:fullscreen .hero-map-card>.card-header{position:relative;z-index:5;flex:0 0 auto;width:100%!important;max-width:none!important}
+main#top.app-workspace:fullscreen #drainMap.pipe-map{position:relative!important;display:block!important;flex:1 1 0!important;width:100%!important;height:auto!important;min-width:0!important;min-height:0!important;max-height:none!important;margin:0!important}
+main#top.app-workspace:fullscreen #pipe3dViewer.pipe-viewer,main#top.app-workspace:fullscreen #pipeSvgFallback.pipe-viewer{inset:0!important;width:100%!important;height:100%!important}
+main#top.app-workspace:fullscreen #pipe3dViewer canvas{display:block;width:100%!important;height:100%!important}
+/* The named columns override Bootstrap sizing only while the Three.js view is active. */
+main#top.app-workspace #map-section.pipe-map-mode-3d>.row{display:grid!important;grid-template-columns:minmax(0,var(--workspace-side)) minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr)!important}
+main#top.app-workspace #map-section.pipe-map-mode-3d>.row>.workspace-console-column{display:block;grid-column:1;grid-row:1;min-width:0;width:auto!important;max-width:none!important;height:100%;padding:0;}
+main#top.app-workspace #map-section.pipe-map-mode-3d>.row>.workspace-map-column{display:flex;grid-column:2;grid-row:1;min-width:0;min-height:0;width:auto!important;max-width:none!important;height:100%;padding:0;}
+main#top.app-workspace.console-collapsed #map-section.pipe-map-mode-3d>.row{grid-template-columns:minmax(0,1fr)!important}
+main#top.app-workspace.console-collapsed #map-section.pipe-map-mode-3d>.row>.workspace-console-column{display:none!important}
+main#top.app-workspace.console-collapsed #map-section.pipe-map-mode-3d>.row>.workspace-map-column{grid-column:1}
+main#top.app-workspace #map-section.pipe-map-mode-3d .workspace-map-column>.hero-map-card{display:flex;flex:1 1 0;width:100%;height:100%!important;min-width:0;min-height:0!important}
+main#top.app-workspace:fullscreen #map-section.pipe-map-mode-3d>.row>.workspace-map-column{grid-column:1;width:100%!important;height:100%!important}
+main#top.app-workspace:fullscreen #map-section.pipe-map-mode-3d>.row>.workspace-console-column{display:none!important}
+main#top.app-workspace:fullscreen #map-section.pipe-map-mode-3d .workspace-map-column>.hero-map-card{flex:1 1 0;width:100%!important;height:100%!important;min-height:0!important}
+/* Three.js alone gets the fullscreen-style canvas sizing and compact glass header. */
+#map-section.pipe-map-mode-3d .hero-map-card{min-width:0;min-height:0!important}
+#map-section.pipe-map-mode-3d .hero-map-card>.card-header{left:12px;right:12px;top:12px;display:grid!important;grid-template-columns:minmax(160px,1fr) auto minmax(0,2fr);grid-template-areas:"title tools legend";align-items:center;gap:12px;max-width:none;padding:10px 14px;background:color-mix(in srgb,var(--surface) 84%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+#map-section.pipe-map-mode-3d .hero-map-card>.card-header>div:first-child{grid-area:title;min-width:0}
+#map-section.pipe-map-mode-3d .hero-map-card>.card-header h2{font-size:.98rem}
+#map-section.pipe-map-mode-3d .pipe-map-tools{grid-area:tools;display:flex;flex-wrap:nowrap;align-items:center;gap:7px;white-space:nowrap}
+#map-section.pipe-map-mode-3d .pipe-drag-hint{white-space:nowrap}
+#map-section.pipe-map-mode-3d .map-legend{grid-area:legend;display:flex!important;flex-wrap:nowrap!important;align-items:center;justify-content:flex-end;gap:7px;min-width:0;white-space:nowrap}
+#map-section.pipe-map-mode-3d .map-legend>span{display:inline-flex;flex:0 0 auto;align-items:center;white-space:nowrap;font-size:.64rem}
+#map-section.pipe-map-mode-3d #drainMap.pipe-map{position:relative;flex:1 1 0;width:100%;height:100%!important;min-width:0;min-height:0!important;max-height:none;overflow:hidden}
+#map-section.pipe-map-mode-3d #pipe3dViewer.pipe-viewer{position:absolute;inset:0;width:100%;height:100%}
+#map-section.pipe-map-mode-3d #pipe3dViewer canvas{display:block;width:100%!important;height:100%!important;touch-action:none}
+@media(max-width:1399.98px){
+  #map-section.pipe-map-mode-3d .hero-map-card>.card-header{grid-template-columns:minmax(145px,1fr) auto;grid-template-areas:"title tools" "legend legend";row-gap:6px}
+  #map-section.pipe-map-mode-3d .map-legend{display:grid!important;grid-template-columns:repeat(4,max-content);justify-content:flex-start;gap:5px 12px}
+}
+@media(max-width:767.98px){
+  #map-section.pipe-map-mode-3d .hero-map-card>.card-header{left:8px;right:8px;top:8px;grid-template-columns:minmax(0,1fr);grid-template-areas:"title" "tools" "legend";gap:5px;padding:8px}
+  #map-section.pipe-map-mode-3d .pipe-map-tools{flex-wrap:wrap;white-space:normal}
+  #map-section.pipe-map-mode-3d .map-legend{display:grid!important;grid-template-columns:repeat(2,max-content);justify-content:start;column-gap:12px;row-gap:4px}
+  #map-section.pipe-map-mode-3d .map-legend>span{font-size:.59rem}
+}
+/* Keep the floating alert control and its count badge fully inside the viewport. */
+.notice-reopen{right:clamp(20px,2vw,32px);}
+.notice-reopen span{right:1px;top:1px;transform:translate(24%,-24%)}
+main#top:fullscreen~.notice-reopen{right:clamp(20px,2vw,32px)}

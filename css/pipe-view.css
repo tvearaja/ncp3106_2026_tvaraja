@@ -16,6 +16,9 @@
 .pipe-view-toggle { display:inline-flex; gap:2px; padding:3px; border:1px solid var(--border); border-radius:9px; background:var(--surface-2); }
 .pipe-view-btn { border:0; border-radius:6px; padding:4px 11px; color:var(--text); background:transparent; font-size:.72rem; font-weight:700; }
 .pipe-view-btn.active { color:#fff; background:var(--blue-strong); }
+.pipe-layer-btn { display:inline-flex; align-items:center; gap:6px; min-height:30px; padding:4px 10px; color:var(--text); background:var(--surface); border:1px solid var(--border); border-radius:8px; font-size:.68rem; font-weight:700; white-space:nowrap; }
+.pipe-layer-btn:hover { color:var(--blue-strong); background:var(--surface-2); }
+.pipe-layer-btn[hidden] { display:none!important; }
 .pipe-drag-hint { color:var(--muted); font-size:.69rem; white-space:nowrap; }
 .pipe-reset-btn { width:30px; height:30px; display:grid; place-items:center; color:var(--text); background:var(--surface); border:1px solid var(--border); border-radius:8px; }
 .pipe-3d-unavailable { position:absolute; z-index:4; left:12px; bottom:12px; padding:7px 10px; color:var(--text); background:var(--surface); border:1px solid var(--border); border-radius:8px; font-size:.72rem; }
